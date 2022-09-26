@@ -4,11 +4,10 @@ package com.csmentors.app;
  * Hello world!
  *
  */
-public class App 
+public class Trial 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        Trial.main(args);
+        System.out.println( "From the trialsss" );
     }
 }
