@@ -1,0 +1,33 @@
+name: submit-contest
+on: 
+  push:
+    branches:
+      - qa/**
+      - fa22/**
+
+jobs:
+  test-and-submit-student-solution:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - uses: actions/checkout@v3
+
+      - name: set_up_jdk
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: "adopt"
+          cache: maven
+
+      - name: run_unit_tests
+        run: mvn test -B --file pom.xml
+
+      - run: echo "${{ steps.run_unit_tests.outputs }}"
+
+      - name: upload_results
+        uses: distributhor/workflow-webhook@v2
+        env:
+          webhook_url: "https://f622-135-180-196-146.ngrok.io"
+          webhook_secret: "secret"
+          data: '{ "out": "${{ steps.run_unit_tests.outputs }}" }'
