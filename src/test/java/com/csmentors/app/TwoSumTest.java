@@ -23,7 +23,8 @@ public class TwoSumTest
     @Test
     public void sanityOne()
     {
-        nums = new int[] { 2, 7, 11, 15 };
+        // comment
+        nums = new int[] { 3, 7, 11, 15 };
         target = 9;
         assertArrayEquals(new int[] { 0, 1 }, ts.twoSum(nums, target));
     }
