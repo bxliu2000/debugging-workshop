@@ -14,4 +14,5 @@ output=$(mvn test -B --file pom.xml \
                     )
                 )'
         )
+
 echo "::set-output name=results::$output"
