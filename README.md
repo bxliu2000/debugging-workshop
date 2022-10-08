@@ -8,7 +8,8 @@ This codebase contains all of the (faulty) functions and corresponding test case
 
 For the following instructions, please replace `<username>` with your github username, e.g. `bxliu2000`.
 ```
-git clone https://github.com/bxliu2000/debugging-workshop.git       # Clones the repo.
+git clone -b main https://github.com/bxliu2000/debugging-workshop.git       # Clones the repo.
+cd debugging-workshop
 git checkout -b fa22/<username>                                     # Checks out a branch.
 ```
 ### Debugging & Running Tests
