@@ -31,4 +31,25 @@ public class LongestPalindromicSubstringTest
         assertTrue(expected.contains(lps.longestPalindrome(input)));
     }
 
+    @Test
+    public void sanityTwo()
+    {
+        // comment
+        input = "cbbd";
+        expected = new HashSet<String>(Arrays.asList("bb"));
+        assertTrue(expected.contains(lps.longestPalindrome(input)));
+    }
+
+    @Test
+    public void sanityThree()
+    {
+        // comment
+        input = "aabbbccccbbbaa";
+        expected = new HashSet<String>(Arrays.asList("aabbbccccbbbaa"));
+        assertTrue(expected.contains(lps.longestPalindrome(input)));
+
+        input = "a";
+        expected = new HashSet<String>(Arrays.asList("a"));
+        assertTrue(expected.contains(lps.longestPalindrome(input)));
+    }
 }
